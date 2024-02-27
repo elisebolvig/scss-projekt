@@ -11,6 +11,9 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #F0F0F0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 body p {
   font-size: 16px;
@@ -164,4 +167,115 @@ main .cta-wrapper {
 .cta-1 a:hover, .cta-2 a:hover, .cta-3 a:hover {
   background-color: #133833;
   transition: 0.4s ease-in-out;
+}
+
+/* Tekst og billede sektion */
+.txt-img-section {
+  grid-column: 1/7; /* Fylder den fulde bredde (7 kollonner) */
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.tekst {
+  grid-column: 1/5; /* Angiver bredden af antal kollonner */
+  background-color: #133833;
+  padding: 2em 4em 4em 4em;
+}
+.tekst p, .tekst h2 {
+  color: #F0F0F0;
+}
+.tekst p:nth-of-type(4) { /* Den går ind og tager fat i den 4. <p>*/
+  margin-bottom: 3em;
+}
+.tekst h2 {
+  text-align: left;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  border: 2px solid #fff;
+}
+.secondary-btn:hover {
+  background-color: #fff;
+  color: #133833;
+  transition: 0.4s ease-in-out;
+}
+
+.billede {
+  grid-column: 5/8;
+  background-image: url(../img/presentation.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.kontakt-bg-img {
+  grid-column: 1/7; /* Den fulde bredde, der er underlagt det grid vi lavede på main */
+  background: linear-gradient(rgba(142, 142, 142, 0.8), rgba(142, 142, 142, 0.8)), url(../img/meeting.jpg);
+  background-size: cover;
+}
+
+.kontaktform {
+  background-color: #F0F0F0;
+  border-radius: 5px;
+  padding: 1.3em;
+  width: 50%;
+  margin: 4em auto;
+}
+.kontaktform h3 {
+  font-size: 25px;
+  margin-bottom: 0;
+  margin-left: 0.5em;
+}
+.kontaktform p {
+  margin: 1em;
+}
+
+.section-form {
+  display: flex;
+}
+
+input[type=text], input[type=email], input[type=tel], select, textarea {
+  width: 100%;
+  font-size: 15px;
+  padding: 1em;
+  border: 2px solid #133833;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0.5em 1em 1em 1em;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type=submit] {
+  background-color: #3A8479;
+  padding: 0.8em 1em;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  font-size: 15px;
+  border: none;
+  width: 100%;
+  margin: 0 1em;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #133833;
+  transition: 0.4s ease-in-out;
+}
+
+.visually-hidden { /* Bootstrap defineret class som fjerner element fra skærm, men som stadig kan læsees af skærmlæsere*/
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }/*# sourceMappingURL=style.css.map */
